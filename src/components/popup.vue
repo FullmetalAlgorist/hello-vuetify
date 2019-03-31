@@ -1,6 +1,6 @@
 <template>
     <v-dialog max-width="600px" v-model="popup">
-        <v-btn slot="activator" outline>Add new project</v-btn>
+        <v-btn slot="activator" outline>new project</v-btn>
         <v-card class="card c">
             <v-card-title>
                 <h2>Add a new Project:</h2>
@@ -39,7 +39,7 @@ export default {
         Sub(){
             if(this.$refs.form.validate()){
                 //create new project with this info before deleting it
-                console.log(this.title, this.content);
+                console.log(this.title, this.content, this.due);
                 this.pF();
             }
         },
@@ -47,6 +47,7 @@ export default {
             this.popup = false;
             this.title = '';
             this.content = '';
+            this.due= null;
         }
     },
         computed:{
@@ -59,7 +60,7 @@ export default {
 </script>
 <style scoped>
 .c{
-   background-color: rgba(128, 128, 128, 0.6)
+   background-color: rgba(128, 128, 128, 0.7)
 }
 </style>
 

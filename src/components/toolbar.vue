@@ -13,13 +13,15 @@
             </v-btn>
         </v-toolbar>
 
-        <v-navigation-drawer app v-model="drawer" class="indigo">
+        <v-navigation-drawer app v-model="drawer" class="indigo" mobile-break-point="50000">
+            <v-toolbar-side-icon class="mt-2 ml-3" @click="drawer =!drawer"><v-icon>close</v-icon></v-toolbar-side-icon>
             <v-layout column align-center>
-                <v-flex class="mt-5">
-                    <v-avatar size="150">
+                
+                <v-flex class="mt-3">
+                    <v-avatar size="200">
                         <img src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1445&q=80" alt="">
                     </v-avatar>
-                    <p class="white--text subheading mt-1 text-md-center">
+                    <p class="white--text subheading mt-1 mariah">
                         Mariah
                     </p>
                 </v-flex>
@@ -42,6 +44,7 @@
 </template>
 <script>
 import Popup from './popup'
+
 export default {
     data(){
         return {
@@ -54,8 +57,17 @@ export default {
         }
     },
     components:{
-        popup: Popup
+        popup: Popup,
+        
     }
     
 }
 </script>
+<style lang="scss" scoped>
+.mariah{
+    text-align: center;
+}
+img{
+  object-fit:cover; 
+}
+</style>
